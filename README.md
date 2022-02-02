@@ -1,11 +1,25 @@
-Welcome to your new dbt project!
+# Testing dbt project: `poffertjes_shop`
 
-### Using the starter project
+`poffertjes_shop` is a fictional vendor selling miniature Dutch pancakes. This dbt project is inspired by the [`jaffle_shop`](https://github.com/dbt-labs/jaffle_shop) demo project, but now has more Amsterdam! (as well as features such as snapshots, souces, and freshness checks).
 
-Try running the following commands:
-- dbt run
-- dbt test
+### Using the project
 
+Open this project in a Github Codespace to get started. (Click the green `Code` button in the project's Github page and select `New Codespace`.)
+
+You can run the dbt commands with poetry. The commands below will also be ran automatically the first time you start the Codespace.
+
+```bash
+poetry run dbt build
+poetry run dbt docs generate
+poetry run dbt snapshot
+poetry run dbt source freshness
+```
+
+To inspect the database, use the `psql` command.
+
+```
+psql
+```
 
 ### Resources:
 - Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
