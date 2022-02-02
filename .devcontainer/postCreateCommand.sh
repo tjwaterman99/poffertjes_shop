@@ -10,10 +10,8 @@ sudo -u postgres createdb $PGDATABASE -O $PGUSER
 pipx install poetry
 poetry install
 
-alias dbt="poetry run dbt"
-
-dbt deps
-dbt build
-dbt docs generate
-dbt snapshot
-dbt source freshness
+poetry run dbt deps
+poetry run dbt build
+poetry run dbt docs generate
+poetry run dbt snapshot
+poetry run dbt source freshness
