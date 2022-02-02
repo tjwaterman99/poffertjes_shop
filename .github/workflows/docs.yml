@@ -9,7 +9,7 @@ env:
   PGPASSWORD: password
   PGUSER: poffertjes_shop
   PGDATABASE: poffertjes_shop
-  DBT_PROFILES_DIR: /workspaces/poffertjes_shop
+  DBT_PROFILES_DIR: .
 
 jobs:
   build:
