@@ -1,0 +1,28 @@
+
+name: CI
+
+on:
+  push:
+    branches: [ main, update-ci ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  PGHOST: localhost
+  PGPASSWORD: password
+  PGUSER: poffertjes_shop
+  PGDATABASE: poffertjes_shop
+  DBT_PROFILES_DIR: .
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9    
+    - name: Install dependencies
+      run: .devcontainer/postCreateCommand.sh
