@@ -1,0 +1,28 @@
+name: Publish Docs
+
+on:
+  push:
+    branches: ['main']
+
+env:
+  PGHOST: localhost
+  PGPASSWORD: password
+  PGUSER: poffertjes_shop
+  PGDATABASE: poffertjes_shop
+  DBT_PROFILES_DIR: /workspaces/poffertjes_shop
+
+jobs:
+  build:
+    runs-on: mcr.microsoft.com/vscode/devcontainers/python:3.9
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: .devcontainer/postCreateCommand.sh
+    - name: Build docs
+      run: poetry run dbt docs generate
+    - name: Deploy docs
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs/_build/html
