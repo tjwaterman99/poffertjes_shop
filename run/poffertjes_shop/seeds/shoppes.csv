@@ -1,0 +1,10 @@
+
+    
+    create table "poffertjes_shop"."public"."shoppes" ("id" integer,"location" text)
+  ;
+    -- dbt seed --
+    
+          insert into "poffertjes_shop"."public"."shoppes" ("id", "location") values
+          (%s,%s),(%s,%s)
+      
+  
