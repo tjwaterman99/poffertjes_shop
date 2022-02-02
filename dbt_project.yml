@@ -21,6 +21,9 @@ snapshot-paths: ["snapshots"]
 
 on-run-start:
   - "{{ create_or_replace_table_raw_customers() }}"
+  - "{{ create_or_replace_table_raw_products() }}"
+  - "{{ create_or_replace_table_raw_orders() }}"
+  - "{{ create_or_replace_table_raw_order_items() }}"
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
@@ -37,5 +40,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   poffertjes_shop:
     # Config indicated by + and applies to all files under models/example/
-    example:
+    base:
       +materialized: view

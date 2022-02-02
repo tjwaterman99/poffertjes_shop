@@ -1,0 +1,47 @@
+
+version: 2
+
+models:
+  - name: base_customers
+    description: "A formatted view of the customers table"
+    columns:
+      - name: customer_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: base_order_items
+    description: "A formatted view of the order_items table"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - product_id
+            - order_id
+
+  - name: base_orders
+    description: "A formatted view of the orders table"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: base_products
+    description: "A formatted view of the products table"
+    columns:
+      - name: product_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: base_shoppes
+    description: "A formatted view of the shoppes table"
+    columns:
+      - name: shoppe_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
