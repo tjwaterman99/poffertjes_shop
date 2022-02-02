@@ -12,6 +12,7 @@ poetry install
 
 alias dbt="poetry run dbt"
 
+dbt deps
 dbt build
 dbt docs generate
 dbt snapshot
