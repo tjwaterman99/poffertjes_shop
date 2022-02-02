@@ -1,6 +1,6 @@
 # Testing dbt project: `poffertjes_shop`
 
-`poffertjes_shop` is a fictional vendor selling miniature Dutch pancakes. This dbt project is inspired by the [`jaffle_shop`](https://github.com/dbt-labs/jaffle_shop) demo project, but now has more Amsterdam! (as well as features such as snapshots, souces, and freshness checks).
+`poffertjes_shop` is a fictional vendor selling miniature Dutch pancakes. This dbt project is inspired by the [`jaffle_shop`](https://github.com/dbt-labs/jaffle_shop) demo project, but now has more Amsterdam! (as well as features such as snapshots, sources, and freshness checks).
 
 ### Using the project
 
@@ -19,6 +19,18 @@ To inspect the database, use the `psql` command.
 
 ```
 psql
+```
+
+### Documentation site
+
+The dbt docs are available on the repository's Github pages site.
+
+https://tjwaterman99.github.io/poffertjes_shop/
+
+You can also start the docs site from the development environment.
+
+```
+poetry run dbt docs serve
 ```
 
 ### Resources:
