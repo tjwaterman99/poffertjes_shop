@@ -1,0 +1,27 @@
+name: Check Conventions
+
+on:
+  push:
+    branches: ['main', 'add-conventions-linter']
+
+env:
+  PGHOST: localhost
+  PGPASSWORD: password
+  PGUSER: poffertjes_shop
+  PGDATABASE: poffertjes_shop
+  DBT_PROFILES_DIR: .
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9    
+    - name: Install dependencies
+      run: .devcontainer/postCreateCommand.sh
+    - name: Check conventions
+      run: poetry run pytest -v conventions.py
