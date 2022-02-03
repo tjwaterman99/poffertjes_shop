@@ -5,7 +5,9 @@ drop table if exists raw_customers cascade;
 create table raw_customers (
     customer_id int,
     contact varchar,
-    name varchar
+    name varchar,
+    created_at timestamp default now(),
+    updated_at timestamp default now()
 );
 
 insert into raw_customers 

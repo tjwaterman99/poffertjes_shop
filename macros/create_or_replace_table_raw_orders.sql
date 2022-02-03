@@ -6,7 +6,8 @@ create table raw_orders (
     order_id int primary key,
     customer_id int,
     shop_id int,
-    created_at timestamp default now()
+    created_at timestamp default now(),
+    updated_at timestamp default now()
 );
 
 insert into raw_orders 

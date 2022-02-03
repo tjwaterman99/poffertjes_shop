@@ -7,6 +7,7 @@ create table raw_order_items (
     product_id int,
     quantity int,
     created_at timestamp default now(),
+    updated_at timestamp default now(),
     primary key ( order_id, product_id )
 );
 

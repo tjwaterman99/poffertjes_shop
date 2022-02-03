@@ -6,7 +6,8 @@ create table raw_products (
     product_id int primary key,
     name varchar,
     price_in_euros int,
-    created_at timestamp default now()
+    created_at timestamp default now(),
+    updated_at timestamp default now()
 );
 
 insert into raw_products 
