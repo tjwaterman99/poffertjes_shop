@@ -1,4 +1,8 @@
 
 
-def test_conventions_fixture(dbt_test_fixture):
-    assert dbt_test_fixture is not None
+def test_selectors_have_descriptions(selector):
+    assert selector.get('description') is not None
+
+
+def test_macros_have_descriptions(macro):
+    assert macro.description is not None

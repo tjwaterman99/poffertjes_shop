@@ -1,0 +1,7 @@
+selectors:
+  - name: base_models
+    description: All base models
+    definition:
+      union:
+        - method: path
+          value: models/base/
