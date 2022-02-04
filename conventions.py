@@ -1,4 +1,4 @@
 
 
 def test_conventions_fixture(source):
-    assert source is not null
+    assert source is not None
