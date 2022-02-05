@@ -5,13 +5,13 @@ drop table if exists raw_orders cascade;
 create table raw_orders (
     order_id int primary key,
     customer_id int,
-    shop_id int,
+    shoppe_id int,
     created_at timestamp default now(),
     updated_at timestamp default now()
 );
 
 insert into raw_orders 
-    (order_id, customer_id, shop_id) 
+    (order_id, customer_id, shoppe_id) 
 values 
     (1, 2, 1), 
     (2, 2, 1), 

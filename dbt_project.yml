@@ -30,6 +30,11 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+vars:
+  exchange_rates:
+    USD: 1.0
+    EUR: 0.87
+    AUD: 1.41
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
