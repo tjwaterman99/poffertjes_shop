@@ -1,0 +1,25 @@
+version: 2
+
+metrics:
+  - name: revenue
+    label: Revenue
+    model: ref('revenue_summary')
+    description: "The amount of revenue in Euros"
+
+    type: sum
+    sql:  revenue_in_euros # superfluous here, but shown as an example
+
+    timestamp: created_at
+    time_grains: [day, week, month]
+
+    dimensions:
+      - product_name
+      - location
+    
+    filters:
+      - field: customer_name
+        operator: '='
+        value: "'Tom Waterman'"
+
+
+    meta: {team: "Finance Analytics"}
