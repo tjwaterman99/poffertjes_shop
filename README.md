@@ -1,8 +1,16 @@
-# Testing dbt project: `poffertjes_shop`
+## Testing dbt project: `poffertjes_shop` 🇳🇱
 
-`poffertjes_shop` is the dbt project of a fictional vendor selling miniature Dutch pancakes. 
+`poffertjes_shop` is the dbt project of a fictional vendor selling miniature Dutch pancakes. Roughly the size of the circle created by putting your index finger and thumb together 👌 .
 
 The project is inspired by the [`jaffle_shop`](https://github.com/dbt-labs/jaffle_shop) project, but now has more Amsterdam! (as well as features such as snapshots, sources, and freshness checks).
+
+### Conventions
+
+This project follows conventions defined in the `conventions.py` file. To validate the conventions, use pytest.
+
+```
+poetry run pytest conventions.py
+```
 
 ### Using the project
 
@@ -33,12 +41,4 @@ You can also start the docs site from the development environment.
 
 ```
 poetry run dbt docs serve
-```
-
-### Conventions
-
-This project follows conventions defined in the `conventions.py` file. To validate the conventions, use pytest.
-
-```
-poetry run pytest conventions.py
 ```
