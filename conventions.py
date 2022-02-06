@@ -1,5 +1,14 @@
-import pytest
+"""
+A conventions.py file for validating the dbt project adheres to the conventions
+defined below.
 
+The conventions can be checked with pytest.
+
+    $ pytest conventions.py
+    
+The conventions are also checked automatically on every PR by the `conventions.yml`
+workflow. 
+"""
 
 def test_sources_have_snapshots(source):
     assert len(source.snapshots) == 1
