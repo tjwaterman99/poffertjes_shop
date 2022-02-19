@@ -10,7 +10,12 @@ The conventions are also checked automatically on every PR by the `conventions.y
 workflow. 
 """
 
+import pytest
+
+
 def test_sources_have_snapshots(source):
+    if source.name in ['external_events']:
+        pytest.skip()
     assert len(source.snapshots) == 1
 
 
@@ -26,6 +31,8 @@ def test_base_models_are_in_base_directory(model):
 
 
 def test_sources_have_exactly_one_base_model(source):
+    if source.name in ['external_events']:
+        pytest.skip()    
     child_models = [c.node for c in source.children if c.resource_type == 'model']
     assert len(child_models) == 1
     assert child_models[0].name.startswith('base')
