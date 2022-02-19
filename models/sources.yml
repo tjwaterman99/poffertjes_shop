@@ -10,6 +10,30 @@ sources:
     tables:
       - name: orders
         identifier: raw_orders
+        description: >
+          One order per record.
+        columns:
+          - name: order_id
+            description: The order_id column
+            tests:
+              - not_null
+              - unique
+          - name: customer_id
+            description: The customer_id column
+            tests:
+              - not_null
+          - name: shoppe_id
+            description: The shoppe_id column
+            tests:
+              - not_null
+          - name: created_at
+            description: The created_at column
+            tests:
+              - not_null
+          - name: updated_at
+            description: The updated_at column
+            tests:
+              - not_null
       - name: products
         identifier: raw_products
       - name: customers
