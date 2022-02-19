@@ -24,6 +24,7 @@ on-run-start:
   - "{{ create_or_replace_table_raw_products() }}"
   - "{{ create_or_replace_table_raw_orders() }}"
   - "{{ create_or_replace_table_raw_order_items() }}"
+  - "{{ create_or_replace_table_external_events() }}"
 
 target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
