@@ -1,0 +1,14 @@
+version: 2
+
+macros:
+  - name: convert_currency
+    description: Convert a value from one currency to another. Defaults to converting to USD.
+    docs:
+      show: true
+    arguments:
+      - name: from
+        type: string
+        description: The currency to convert from. Required.
+      - name: to
+        type: string
+        description: The currency to convert to. Defaults to USD.        
