@@ -1,8 +1,8 @@
 ## Testing dbt project: `poffertjes_shop` 🇳🇱
 
-`poffertjes_shop` is the dbt project of a fictional vendor selling miniature Dutch pancakes. Roughly the size of the circle created by putting your index finger and thumb together 👌 .
+`poffertjes_shop` is the dbt project of a fictional vendor selling miniature Dutch pancakes. (Roughly the size of the circle created by putting your index finger and thumb together 👌 ).
 
-The project is inspired by the [`jaffle_shop`](https://github.com/dbt-labs/jaffle_shop) project, but now has more Amsterdam! (as well as features such as snapshots, sources, and freshness checks).
+The project is inspired by the [`jaffle_shop`](https://github.com/dbt-labs/jaffle_shop) project, but now has more Amsterdam!
 
 ### Conventions
 
