@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: revenue_summary
+    description: "Revenue summary"
+    columns:
+      - name: revenue_in_usd
+        description: "Revenue in USD"
+        tests:
+          - not_null
+          - non_negative
+      - name: revenue_in_euros
+        description: "Revenue in Euros"
+        tests:
+          - not_null
+          - non_negative
