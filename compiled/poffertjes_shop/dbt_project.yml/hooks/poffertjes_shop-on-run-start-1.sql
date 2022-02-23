@@ -1,6 +1,1 @@
-
-
-
-
-
-
+create table if not exists model_starts (run_id varchar not null, started_at timestamp not null);

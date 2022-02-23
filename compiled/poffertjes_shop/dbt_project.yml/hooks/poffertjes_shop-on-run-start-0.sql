@@ -1,6 +1,1 @@
-
-
-
-
-
-
+create table if not exists model_builds (model_id varchar not null, built_at timestamp not null);
