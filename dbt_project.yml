@@ -20,6 +20,8 @@ macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
 on-run-start:
+  - "create table if not exists model_builds (model_id varchar not null, built_at timestamp not null);"
+  - "create table if not exists model_starts (run_id varchar not null, started_at timestamp not null);"
   - "{{ create_or_replace_table_raw_customers() }}"
   - "{{ create_or_replace_table_raw_products() }}"
   - "{{ create_or_replace_table_raw_orders() }}"
@@ -44,7 +46,9 @@ vars:
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
+  +post-hook:
+    - "insert into model_builds values ('{{ this }}', current_timestamp);"
   poffertjes_shop:
     # Config indicated by + and applies to all files under models/example/
     base:
-      +materialized: view
+      +materialized: view      
