@@ -23,4 +23,4 @@ jobs:
     - name: Install dependencies
       run: .devcontainer/postCreateCommand.sh
     - name: Check conventions
-      run: poetry run pytest -v conventions.py
+      run: poetry run pytest -v conventions.py --package-name poffertjes_shop
